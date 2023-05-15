@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PriyankaAndToys\PriyankaAndToys.csproj" />
     <ProjectReference Include="..\SherlockAndTheBeast\SherlockAndTheBeast.csproj" />
   </ItemGroup>
 

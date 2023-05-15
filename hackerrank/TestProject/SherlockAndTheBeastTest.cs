@@ -4,12 +4,6 @@ namespace TestProject
 {
     public class SherlockAndTheBeastTest
     {
-        [SetUp]
-        public void Setup()
-        {
-
-        }
-
         [TestCase(1, "-1")]
         [TestCase(3, "555")]
         [TestCase(5, "33333")]
