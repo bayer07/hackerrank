@@ -2,11 +2,11 @@
 
 namespace TestProject.Sorting
 {
-    internal class InsertionSort1
+    internal class InsertionSort
     {
 
         [TestCaseSource(nameof(Input))]
-        public void InsertionSort2(int n, List<int> arr, List<string> expected)
+        public void InsertionSort1(int n, List<int> arr, List<string> expected)
         {
             int expectedIndex = 0;
             for (int i = n - 1; i > 0; i--)
@@ -14,11 +14,11 @@ namespace TestProject.Sorting
                 int x = arr[i];
                 if (x < arr[i - 1])
                 {
-                    for (int j = i; j > 0; j--)
+                    for (int j = i - 1; j > -1; j--)
                     {
-                        if (arr[j - 1] > x)
+                        if (arr[j] > x)
                         {
-                            arr[j] = arr[j - 1];
+                            arr[j + 1] = arr[j];
 
                             string actualResult = GetActualResult(n, arr);
                             TestContext.Out.WriteLine(actualResult);
@@ -27,7 +27,7 @@ namespace TestProject.Sorting
                         }
                         else
                         {
-                            arr[j] = x;
+                            arr[j + 1] = x;
 
                             string actualResult = GetActualResult(n, arr);
                             TestContext.Out.WriteLine(actualResult);
@@ -49,6 +49,7 @@ namespace TestProject.Sorting
                     }
                 }
             }
+            Assert.AreEqual(expected.Count, expectedIndex);
         }
 
         public static readonly object[] Input =
