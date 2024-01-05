@@ -1,8 +1,8 @@
-﻿using System.Text;
+﻿using TestProject.Extensions;
 
 namespace TestProject.Sorting
 {
-    internal class InsertionSort
+    internal class Sort1
     {
 
         [TestCaseSource(nameof(Input))]
@@ -20,7 +20,7 @@ namespace TestProject.Sorting
                         {
                             arr[j + 1] = arr[j];
 
-                            string actualResult = GetActualResult(n, arr);
+                            string actualResult = arr.ToLineString();
                             TestContext.Out.WriteLine(actualResult);
                             Assert.AreEqual(expected[expectedIndex], actualResult);
                             expectedIndex++;
@@ -29,7 +29,7 @@ namespace TestProject.Sorting
                         {
                             arr[j + 1] = x;
 
-                            string actualResult = GetActualResult(n, arr);
+                            string actualResult = arr.ToLineString();
                             TestContext.Out.WriteLine(actualResult);
                             Assert.AreEqual(expected[expectedIndex], actualResult);
                             expectedIndex++;
@@ -42,7 +42,7 @@ namespace TestProject.Sorting
                     {
                         arr[0] = x;
 
-                        string actualResult = GetActualResult(n, arr);
+                        string actualResult = arr.ToLineString();
                         TestContext.Out.WriteLine(actualResult);
                         Assert.AreEqual(expected[expectedIndex], actualResult);
                         expectedIndex++;
@@ -72,25 +72,18 @@ namespace TestProject.Sorting
                 new List<int> { 2, 3, 4, 5, 6, 7, 8, 9, 10, 1 },
                 new List<string>
                 {
-                    "2 3 4 5 6 7 8 9 10 10", "2 3 4 5 6 7 8 9 9 10", "2 3 4 5 6 7 8 8 9 10", "2 3 4 5 6 7 7 8 9 10",
-                    "2 3 4 5 6 6 7 8 9 10", "2 3 4 5 5 6 7 8 9 10", "2 3 4 4 5 6 7 8 9 10", "2 3 3 4 5 6 7 8 9 10",
-                    "2 2 3 4 5 6 7 8 9 10", "1 2 3 4 5 6 7 8 9 10"
+                    "2 3 4 5 6 7 8 9 10 10",
+                    "2 3 4 5 6 7 8 9 9 10",
+                    "2 3 4 5 6 7 8 8 9 10",
+                    "2 3 4 5 6 7 7 8 9 10",
+                    "2 3 4 5 6 6 7 8 9 10",
+                    "2 3 4 5 5 6 7 8 9 10",
+                    "2 3 4 4 5 6 7 8 9 10",
+                    "2 3 3 4 5 6 7 8 9 10",
+                    "2 2 3 4 5 6 7 8 9 10",
+                    "1 2 3 4 5 6 7 8 9 10"
                 }
             }
         };
-
-        public static string GetActualResult(int n, List<int> arr)
-        {
-            var sb = new StringBuilder();
-            for (int i = 0; i < n; i++)
-            {
-                if (i != n - 1)
-                    sb.Append($"{arr[i]} ");
-                else
-                    sb.Append(arr[i]);
-            }
-
-            return sb.ToString();
-        }
     }
 }
