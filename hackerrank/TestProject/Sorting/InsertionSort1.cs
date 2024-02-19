@@ -2,11 +2,11 @@
 
 namespace TestProject.Sorting
 {
-    internal class Sort1
+    internal class InsertionSort1
     {
 
         [TestCaseSource(nameof(Input))]
-        public void InsertionSort1(int n, List<int> arr, List<string> expected)
+        public void InsertionSort(int n, List<int> arr, List<string> expected)
         {
             int expectedIndex = 0;
             for (int i = n - 1; i > 0; i--)
