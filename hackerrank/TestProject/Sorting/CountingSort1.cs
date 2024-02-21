@@ -13,10 +13,10 @@ namespace TestProject.Sorting
         {
             var arr = input.Split(' ').Select(x => int.Parse(x)).ToList();
             var expected = output.Split(' ').Select(x => int.Parse(x)).ToList();
-            var sortedArray = CountingSort(arr);
+            var countingArray = CountingSort(arr);
             for (int i = 0; i < arr.Count; i++)
             {
-                Assert.That(expected[i], Is.EqualTo(sortedArray[i]));
+                Assert.That(expected[i], Is.EqualTo(countingArray[i]));
             }
         }
 
