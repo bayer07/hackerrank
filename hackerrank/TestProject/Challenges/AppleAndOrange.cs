@@ -1,6 +1,6 @@
 ﻿namespace TestProject.Challenges
 {
-    internal class AppleAndOrange : BaseTest
+    internal class AppleAndOrange
     {
         [TestCaseSource(nameof(Input))]
         public static void StartTest(int s, int t, int a, int b, List<int> apples, List<int> oranges)
@@ -8,7 +8,7 @@
             CountApplesAndOranges(s, t, a, b, apples, oranges);
         }
 
-        public static new object[] Input => new object[]{
+        public static object[] Input => new object[]{
             new object[]
             {
                 7,10,4,12, new List<int>{2,3,-4}, new List<int>{ 3,-2,-4}
