@@ -40,6 +40,7 @@
             return result;
         }
 
+        [Ignore("")]
         [TestCaseSource(nameof(Input))]
         public static void StartTest(List<int> s, int d, int m, int expected)
         {

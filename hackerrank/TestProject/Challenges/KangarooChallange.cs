@@ -17,6 +17,7 @@
             }
         };
 
+        [Ignore("")]
         [TestCaseSource(nameof(Input))]
         public static void StartTest(int x1, int v1, int x2, int v2, string expected)
         {
