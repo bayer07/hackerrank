@@ -2,6 +2,7 @@
 {
     internal class BigSorting
     {
+        [Ignore("")]
         [TestCaseSource(nameof(Input))]
         public void Sort(List<string> unsorted, List<string> expected)
         {

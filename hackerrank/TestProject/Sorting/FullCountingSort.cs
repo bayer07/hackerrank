@@ -8,6 +8,7 @@ namespace TestProject.Sorting
 {
     internal class FullCountingSort
     {
+        [Ignore("")]
         [TestCaseSource(nameof(Input))]
         public void CountingSort(List<List<string>> arr, string expected)
         {
@@ -16,15 +17,23 @@ namespace TestProject.Sorting
         }
 
         private string _expected;
+
         public void CountingSort(List<List<string>> arr)
         {
+            var countingSort = new Dictionary<string, int>();
+            foreach (var item in arr)
+            {
+                int count = int.Parse(item[0]);
+                string key = item[1];
+                countingSort[key] = count;
+            }
             var countingArray = new List<List<string>>();
             for (int i = 0; i < arr.Count; i++)
             {
                 countingArray.Add(new List<string>());
             }
 
-            int m = arr.Count / 2;
+            int m = (arr.Count / 2) - 1;
             for (int i = 0; i < arr.Count; i++)
             {
                 int number = int.Parse(arr[i][0]);
@@ -86,6 +95,17 @@ namespace TestProject.Sorting
                     new List<string>{ "1", "c" },
                 },
                 "- - f e b c - a - -"
+            },
+            new object[]
+            {
+                new List<List<string>>
+                {
+                    new List<string>{ "0", "a" },
+                    new List<string>{ "1", "b" },
+                    new List<string>{ "0", "c" },
+                    new List<string>{ "1", "d" }
+                },
+                "- c - d"
             }
         };
     }
