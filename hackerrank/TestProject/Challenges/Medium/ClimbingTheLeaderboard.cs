@@ -37,7 +37,7 @@ namespace TestProject.Challenges.Medium
         public static void TestFromFile()
         {
             string rankedString, playersString, output;
-            using (var fileStream = File.OpenRead("..\\..\\..\\Challenges\\Medium\\input06.txt"))
+            using (var fileStream = File.OpenRead("../../../Challenges/Medium/input06.txt"))
             {
                 using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true, 128))
                 {
@@ -49,7 +49,7 @@ namespace TestProject.Challenges.Medium
             }
 
             var expected = new List<int>();
-            using (var fileStream = File.OpenRead("..\\..\\..\\Challenges\\Medium\\output06.txt"))
+            using (var fileStream = File.OpenRead("../../../Challenges/Medium/output06.txt"))
             {
                 using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true, 128))
                 {

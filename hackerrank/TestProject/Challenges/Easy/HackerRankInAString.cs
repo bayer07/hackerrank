@@ -36,7 +36,7 @@ namespace TestProject.Challenges.Easy
         {
             int n;
             string[] result;
-            using (var fileStream = File.OpenRead("..\\..\\..\\Challenges\\Easy\\input01.txt"))
+            using (var fileStream = File.OpenRead("../../../Challenges/Easy/input01.txt"))
             {
                 using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true, 128))
                 {
@@ -51,7 +51,7 @@ namespace TestProject.Challenges.Easy
                 }
             }
 
-            using (var fileStream = File.OpenRead("..\\..\\..\\Challenges\\Easy\\output01.txt"))
+            using (var fileStream = File.OpenRead("../../../Challenges/Easy/output01.txt"))
             {
                 using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true, 128))
                 {
