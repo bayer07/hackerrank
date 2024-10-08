@@ -1,4 +1,4 @@
-﻿namespace TestProject.warmup
+﻿namespace TestProject.WarmUp
 {
     internal class CountingValleys
     {
